@@ -12,13 +12,13 @@ plt.style.use('ggplot')
 #plotar o grafico e escolher a cor e o estilo de plot
 ax=plt.subplot(2, 1, 1)
 
-plt.plot(c0,k,c0,k,'bo')
-r=r2_score(c0,k)
+plt.plot(k,[1,1.5,2,2.5,3,3.5,4,4.5,5],k,[1,1.5,2,2.5,3,3.5,4,4.5,5],'bo')
+r=r2_score(k,[1,1.5,2,2.5,3,3.5,4,4.5,5])
 #nomear os eixos e dar o titulo
 plt.xlabel('Capacitancia')
 plt.ylabel('Constante Dielétrica')
 plt.title('Capacitancia por k')
-plt.text(2,5,'r²=0.99')
+plt.text(2,5,'r=1')
 ax=plt.subplot(2, 1, 2)
 # hide axes
 ax.axis('off')
