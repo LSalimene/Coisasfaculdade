@@ -1,37 +1,37 @@
 Variaveis dos dados de turbulencia
 
-A ano
+0 ano
 
-B dia do ano
+1 dia do ano
 
-C HHMM=hora minuto
+2 HHMM=hora minuto
 
-D segundos
+3 segundos
 
-E u1
+4 u1
 
-F v1
+5 v1
 
-G w1
+6 w1
 
-H Ts1
+7 Ts1
 
-I concentração de CO2
+8 concentração de CO2
 
-J concentração de H2O
+9 concentração de H2O
 
-K Temperatura
+10 Temperatura
 
-L pressão (kPa)
+11 pressão (kPa)
 
-M c1
+12 c1
 
-N c2
+13 c2
 
-O u2
+14 u2
 
-P v2
+15 v2
 
-Q w2
+16 w2
 
-R Ts2
+17 Ts2
