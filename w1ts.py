@@ -19,4 +19,5 @@ plt.hist(t1ts,bins=35,color='g')
 
 plt.xlabel("w'Θ' (K m/s)")
 plt.ylabel('Frequência de Ocorrencia')
+plt.title('')
 plt.show()
