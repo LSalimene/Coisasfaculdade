@@ -13,6 +13,7 @@ tsm=np.mean(ts)
 tsd=tss-int(tsm)
 #plotar a imagem
 plt.hist(tsd,bins=35,color='r')
-plt.xlabel('T (C)')
+plt.grid()
+plt.xlabel("Θ' (C)") 
 plt.ylabel('Frequência de Ocorrencia')
 plt.show()

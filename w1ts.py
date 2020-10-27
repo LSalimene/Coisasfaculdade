@@ -15,9 +15,10 @@ tsm=np.mean(ts)
 tsd=tss-int(tsm)
 t1ts=np.multiply(tsd,w1d)
 #plotar a imagem
-plt.hist(t1ts,bins=35,color='g')
 
-plt.xlabel("w'Θ' (K m/s)")
+plt.hist(t1ts,bins=35,color='g')
+plt.grid()
+plt.xlabel("w'Θ' (C m/s)")
 plt.ylabel('Frequência de Ocorrencia')
 plt.title('')
 plt.show()

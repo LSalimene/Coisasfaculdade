@@ -13,6 +13,7 @@ w1m=np.mean(w1)
 w1d=w1s+int(w1m)
 #plotar a imagem
 plt.hist(w1d,bins=35,color='b')
-plt.xlabel('W (m/s)')
+plt.xlabel("w' (m/s)")
+plt.grid()
 plt.ylabel('Frequência de Ocorrencia')
 plt.show()
