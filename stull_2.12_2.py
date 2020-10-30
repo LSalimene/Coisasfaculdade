@@ -16,4 +16,4 @@ wtd=np.multiply(wm,tm)
 wt_total=wt+wtd
 ubd=np.std(t) #unbiased standard deviation
 r2=np.corrcoef(t,w)
-print(np.mean(wm))
+print(np.mean(wtd))
