@@ -25,6 +25,9 @@ rho = np.divide(ptotal,t)
 ws=np.mean(w1)
 wm=w1-ws
 
+tss=np.mean(ts)
+tm=ts-tss
+
 us=np.mean(u1)
 um=u1-us
 
@@ -44,11 +47,14 @@ reynolds2= vwmean2+uwmean2
 #U*
 tensaoreynolds=np.sqrt(reynolds2)
 uestrela=np.divide(tensaoreynolds,rho)
+#Fluxo de Calor Turbulento
+t1ts=np.multiply(tm,wm)
 #fazer o grafico 
 plt.xlim (0,3600)
-plt.plot(a,uestrela,'#A0522D')
+plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
+plt.hold = True
+plt.plot(a,uestrela,'#A0522D',label='U* (m/s)')
 plt.grid()
 plt.xlabel ('Tempo (s)')
-plt.ylabel ('U* (m/s)')
-plt.title('U* por tempo')
+plt.legend(loc='best')
 plt.show()
