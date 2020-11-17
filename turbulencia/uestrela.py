@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 #dados do dia 2 de maio de 2014
-dados = pd.read_csv(('L_2014_122_1200.dat'),header=None)
+dados = pd.read_csv(('/home/lucas/Coisasfaculdade/turbulencia/L_2014_122_1200.dat'),header=None)
 #importar cada variavel
 ano = pd.DataFrame(dados,columns=[0])
 dia = pd.DataFrame(dados,columns=[1])
@@ -36,23 +36,24 @@ vm=v1-vs
 
 uw=np.multiply(u1,w1)
 vw=np.multiply(v1,w1)
+uw2=np.multiply(uw,uw)
+vw2=np.multiply(vw,vw)
+uwmean=np.mean(uw2)
+vwmean=np.mean(vw2)
 
-uwmean=np.mean(uw)
-vwmean=np.mean(vw)
+#vwmean2=0.081212*0.081212
+#uwmean2=0.189393*0.189393
 
-vwmean2=0.081212*0.081212
-uwmean2=0.189393*0.189393
-
-reynolds2= vwmean2+uwmean2
+reynolds2 =  0.182962+0.464828
 #U*
 tensaoreynolds=np.sqrt(reynolds2)
 uestrela=np.divide(tensaoreynolds,rho)
 #Fluxo de Calor Turbulento
 t1ts=np.multiply(tm,wm)
 #fazer o grafico 
-plt.xlim (600,1200)
-plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
-plt.hold = True
+plt.xlim (0,3600)
+#plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
+#plt.hold = True
 plt.plot(a,uestrela,'#A0522D',label='U* (m/s)')
 plt.grid()
 plt.xlabel ('Tempo (s)')
