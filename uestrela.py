@@ -45,11 +45,10 @@ reynolds2= vwmean2+uwmean2
 tensaoreynolds=np.sqrt(reynolds2)
 uestrela=np.divide(tensaoreynolds,rho)
 #fazer o grafico 
-plt.style.use('bmh')
 plt.xlim (0,3600)
 plt.plot(a,uestrela,'#A0522D')
+plt.grid()
 plt.xlabel ('Tempo (s)')
 plt.ylabel ('U* (m/s)')
 plt.title('U* por tempo')
-plt.grid()
 plt.show()
