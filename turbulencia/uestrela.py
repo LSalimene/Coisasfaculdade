@@ -11,7 +11,7 @@ seg = pd.DataFrame(dados,columns=[3])
 u1 = pd.DataFrame(dados,columns=[4])
 v1 = pd.DataFrame(dados,columns=[5])
 w1 = pd.DataFrame(dados,columns=[6])
-ts = pd.DataFrame(dados,columns=[10])
+ts = pd.DataFrame(dados,columns=[7])
 p = pd.DataFrame(dados,columns=[11])
 #arrumar o tempo dos dados
 min = hhmm-1200
@@ -51,9 +51,9 @@ uestrela=np.divide(tensaoreynolds,rho)
 #Fluxo de Calor Turbulento
 t1ts=np.multiply(tm,wm)
 #fazer o grafico 
-plt.xlim (0,3600)
-#plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
-#plt.hold = True
+plt.xlim (0,1200)
+plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
+plt.hold = True
 plt.plot(a,uestrela,'#A0522D',label='U* (m/s)')
 plt.grid()
 plt.xlabel ('Tempo (s)')
