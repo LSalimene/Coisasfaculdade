@@ -36,41 +36,48 @@ u60 = u1[int(r2):int(r3)]
 v60 = v1[int(r2):int(r3)]
 w60 = w1[int(r2):int(r3)]
 
-mediau2 = np.mean(u20)
-mediav2 = np.mean(v20)
-mediaw2 = np.mean(w20)
+mediau20 = -np.mean(u20)+u20
+mediav20 = -np.mean(v20)+v20
+mediaw20 = -np.mean(w20)+w20
 
-mediau4 = np.mean(u40)
-mediav4 = np.mean(v40)
-mediaw4 = np.mean(w40)
+mediau40 = -np.mean(u40)+u40
+mediav40 = -np.mean(v40)+v40
+mediaw40 = -np.mean(w40)+w40
 
-mediau6 = np.mean(u60)
-mediav6 = np.mean(v60)
-mediaw6 = np.mean(w60)
+mediau60 = -np.mean(u60)+u60
+mediav60 = -np.mean(v60)+v60
+mediaw60 = -np.mean(w60)+w40
+
 #Calcular a energia para 20 min
-media20v2= mediav2*mediav2
-media20u2= mediau2*mediau2
-media20w2= mediaw2*mediaw2
+media20u2 = np.multiply(mediau20,mediau20)
+media20v2 = np.multiply(mediav20,mediav20)
+media20w2 = np.multiply(mediaw20,mediaw20)
 media20uv = sum(media20u2,media20v2)
 ect201 = sum(media20uv,media20w2)
 
 #Calcular a energia para 40 min
-media40v2= mediav4*mediav4
-media40u2= mediau4*mediau4
-media40w2= mediaw4*mediaw4
+media40u2= np.multiply(mediau40,mediau40)
+media40v2= np.multiply(mediav40,mediav40)
+media40w2= np.multiply(mediaw40,mediaw40)
 media40uv = sum(media40u2,media40v2)
 ect401 = sum(media40uv,media40w2)
 
 #Calcular a energia para 20 min
-media60v2= mediav6*mediav6
-media60u2= mediau6*mediau6
-media60w2= mediaw6*mediaw6
+media60u2= np.multiply(mediau60,mediau60)
+media60v2= np.multiply(mediav60,mediav60)
+media60w2= np.multiply(mediaw60,mediaw60)
 media60uv = sum(media60u2,media60v2)
 ect601 = sum(media60uv,media60w2)
 
+#Calcular o numero 
+richard = np.mean(ect201)
+richardd = np.mean(ect401)
+richarddd = np.mean(ect601)
 
-ect20=(ect201*0.5)
-ect40=(ect401*0.5)
-ect60=(ect601*0.5)
+ect20=(richard*0.5)
+ect40=(richardd*0.5)
+ect60=(richarddd*0.5)
+
+print(ect20,ect40,ect60)
 
 
