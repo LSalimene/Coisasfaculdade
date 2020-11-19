@@ -86,7 +86,7 @@ mediau26 = np.mean(u260)
 mediav26 = np.mean(v260)
 mediaw26 = np.mean(w260)
 mediat26 = np.mean(ts260)
-#Calular o numero
+#Calular o numero para 20 min
 
 deltat20 = float(mediat22)-float(mediat2)
 deltau20 = float(mediau22)-float(mediau2)
@@ -100,4 +100,36 @@ usvs = us+vs
 st = float(mediat22)*float(usvs)
 
 r2= bt/-st
-print(r2)
+
+#Calular o numero para 40 min
+
+deltat40 = float(mediat24)-float(mediat4)
+deltau40 = float(mediau24)-float(mediau4)
+deltav40 = float(mediav24)-float(mediav4)
+
+
+bt4 = 9.81*deltat40*6
+us4 = deltau40*deltau40
+vs4 = deltav40*deltav40
+usvs4 = us4+vs4
+st4 = float(mediat24)*float(usvs4)
+
+r4= bt4/-st4
+
+#Calular o numero para 60 min
+
+deltat60 = float(mediat26)-float(mediat6)
+deltau60 = float(mediau26)-float(mediau6)
+deltav60 = float(mediav26)-float(mediav6)
+
+
+bt6 = 9.81*deltat60*6
+us6 = deltau60*deltau60
+vs6 = deltav60*deltav60
+usvs6 = us6+vs6
+st6 = float(mediat26)*float(usvs6)
+
+r6= bt6/-st6
+
+print(r2,r4,r6)
+
