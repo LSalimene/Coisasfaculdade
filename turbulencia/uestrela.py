@@ -50,10 +50,12 @@ tensaoreynolds=np.sqrt(reynolds2)
 uestrela=np.divide(tensaoreynolds,rho)
 #Fluxo de Calor Turbulento
 t1ts=np.multiply(tm,wm)
+print(tensaoreynolds)
 #fazer o grafico 
 plt.xlim (0,1200)
-plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
-plt.hold = True
+plt.ylim(0.04,0.06)
+#plt.plot(a,t1ts,'r',label="w'Θ' (C m/s)")
+#plt.hold = True
 plt.plot(a,uestrela,'#A0522D',label='U* (m/s)')
 plt.grid()
 plt.xlabel ('Tempo (s)')
