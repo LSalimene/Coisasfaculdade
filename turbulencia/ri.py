@@ -154,11 +154,19 @@ uwvw60 = uw602+vw602
 uestrela60=np.sqrt(uwvw60)
 
 
+t20=float(mediat2)/1216
+t40=float(mediat4)/1216
+t60=float(mediat6)/1216
+
+
 tempo = [20,40,60]
+temperatura = [t20,t40,t60]
 uestrela=[uestrela20,uestrela40,uestrela60]
-plt.plot(tempo,uestrela,'g',tempo,uestrela,'ko')
+plt.plot(tempo,uestrela,'g',label="U*")
+plt.hold = True
+plt.plot(tempo,temperatura,'r',label='Q')
 plt.xlabel('Tempo (min)')
-plt.ylabel("U* (m/s)")
-plt.title("U* por Tempo")
+plt.title("U* e Fluxo de calor por Tempo")
 plt.grid()
+plt.legend()
 plt.show()

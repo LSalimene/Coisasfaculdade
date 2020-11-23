@@ -80,4 +80,7 @@ ect60=(richarddd*0.5)
 
 print(ect20,ect40,ect60)
 
-
+ect = [2.596443,2.590203,2.599637]
+tempo = [20,40,60]
+plt.plot(tempo,ect)
+plt.show()
