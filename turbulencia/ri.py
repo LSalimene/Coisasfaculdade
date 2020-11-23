@@ -23,8 +23,8 @@ i0=0
 r1=11999+1
 r2 = 47999+1
 r3 = 72000
-ts = tv+272.15
-ts2 = tv2+272.15
+ts = tv
+ts2 = tv2
 
 
 u20 = u1[int(i0):int(r1)]
@@ -63,7 +63,7 @@ mediaw2 = np.mean(w20)
 mediat2 = np.mean(ts20)
 
 mediau22 = np.mean(u220)
-mediav22 = np.mean(v20)
+mediav22 = np.mean(v220)
 mediaw22 = np.mean(w220)
 mediat22 = np.mean(ts220)
 
@@ -169,4 +169,11 @@ plt.xlabel('Tempo (min)')
 plt.title("U* e Fluxo de calor por Tempo")
 plt.grid()
 plt.legend()
-plt.show()
+#plt.show()
+
+print(mediat26)
+print(mediat6)
+print(mediau26)
+print(mediau6)
+print(mediav26)
+print(mediav6)
