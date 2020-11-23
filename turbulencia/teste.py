@@ -1,16 +1,31 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.fftpack
+import pandas as pd
+#dados do dia 2 de maio de 2014
+dados = pd.read_csv(('/home/lucas/Coisasfaculdade/turbulencia/L_2014_122_1200.dat'),header=None)
+#importar cada variavel
+ano = pd.DataFrame(dados,columns=[0])
+dia = pd.DataFrame(dados,columns=[1])
+hhmm = pd.DataFrame(dados,columns=[2])
+seg = pd.DataFrame(dados,columns=[3])
+u1 = pd.DataFrame(dados,columns=[4])
+v1 = pd.DataFrame(dados,columns=[5])
+w1 = pd.DataFrame(dados,columns=[6])
+tv = pd.DataFrame(dados,columns=[7])
 
+y=scipy.fftpack.fft(tv)
 # Number of sample points
-N = 600
-# sample spacing
-T = 1.0 / 800.0
-x = np.linspace(0.0, N*T, N)
-y = np.sin(50.0 * 2.0*np.pi*x) + 0.5*np.sin(80.0 * 2.0*np.pi*x)
-yf = scipy.fftpack.fft(y)
-xf = np.linspace(0.0, 1.0//(2.0*T), N//2)
-
-fig, ax = plt.subplots()
-ax.plot(xf, 2.0/N * np.abs(yf[:N//2]))
+N = len(y)
+pyy1 =abs(y)
+pyy = np.multiply(pyy1,pyy1)
+ny=20/2
+fy1=np.array(range(36000))
+fy2 = fy1/(36000)
+fy = fy2*ny
+plt.plot(pyy,y,'r.')
+plt.ylabel('Densidade Espectral')
+plt.xlabel('Frequência (Hz)')
+plt.title("Densidade Espectral para T")
+plt.grid()
 plt.show()
