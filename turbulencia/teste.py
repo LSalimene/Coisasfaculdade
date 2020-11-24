@@ -16,16 +16,15 @@ tv = pd.DataFrame(dados,columns=[7])
 
 y=scipy.fftpack.fft(u1)
 # Number of sample points
-N = len(y)
-pyy1 =abs(y)
-pyy = np.multiply(pyy1,pyy1)
-ny=20/2
-fy2 = pyy1/(36000)
-fy = fy2
-freq = np.fft.fftfreq(y)
-plt.plot(freq,fy,'.')
-plt.ylabel('Densidade Espectral')
-plt.xlabel('Frequência (Hz)')
-plt.title("Densidade Espectral para U1")
-plt.grid()
+
+N = tv.shape[0] #number of elements
+s = tv 
+
+fft = np.fft.fft(s)
+fftfreq = np.fft.fftfreq(len(s))
+
+plt.ylabel("Amplitude")
+plt.xlabel("Frequency [Hz]")
+plt.plot(fftfreq,fft,'-')
+plt.ylim(20.75,22.5)
 plt.show()
