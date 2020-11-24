@@ -17,8 +17,8 @@ tv = pd.DataFrame(dados,columns=[7])
 y=scipy.fftpack.fft(u1)
 # Number of sample points
 
-N = tv.shape[0] #number of elements
-s = tv 
+s = abs(u1)
+N = s.shape[0] #number of elements
 
 fft = np.fft.fft(s)
 fftfreq = np.fft.fftfreq(len(s))
@@ -26,5 +26,4 @@ fftfreq = np.fft.fftfreq(len(s))
 plt.ylabel("Amplitude")
 plt.xlabel("Frequency [Hz]")
 plt.plot(fftfreq,fft,'-')
-plt.ylim(20.75,22.5)
 plt.show()
