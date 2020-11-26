@@ -25,7 +25,7 @@ pyy = np.multiply(pyy1,pyy1)
 ny = 20/2
 fy1 = np.array(range(0,n))
 fy = fy1/n*ny
-plt.loglog(fy,pyy,'r.')
+log = plt.loglog(fy,pyy,'r.')
 plt.xlabel('Frequência (Hz)')
 plt.ylabel('Densidade Espectral')
 plt.title('Temperatura')
