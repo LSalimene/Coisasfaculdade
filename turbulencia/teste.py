@@ -14,16 +14,19 @@ v1 = pd.DataFrame(dados,columns=[5])
 w1 = pd.DataFrame(dados,columns=[6])
 tv = pd.DataFrame(dados,columns=[7])
 
-y=scipy.fftpack.fft(u1)
+y=scipy.fftpack.fft(tv)
 # Number of sample points
 
-s = abs(u1)
+s = abs(y)
 N = s.shape[0] #number of elements
-
-fft = np.fft.fft(s)
-fftfreq = np.fft.fftfreq(len(s))
-
-plt.ylabel("Amplitude")
-plt.xlabel("Frequency [Hz]")
-plt.plot(fftfreq,fft,'-')
+n = int(float(N)/2)
+pyy1= s[0:n]
+pyy = np.multiply(pyy1,pyy1)
+ny = 20/2
+fy1 = np.array(range(0,n))
+fy = fy1/n*ny
+plt.loglog(fy,pyy,'r.')
+plt.xlabel('Frequência (Hz)')
+plt.ylabel('Densidade Espectral')
+plt.title('Temperatura')
 plt.show()
