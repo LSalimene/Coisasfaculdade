@@ -3,7 +3,8 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
- 
+plt.style.use('seaborn')
+
 x = [0]
 y = [0]
 z = [0]

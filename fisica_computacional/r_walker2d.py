@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
- 
+plt.style.use('seaborn')
 x = [0]
 y = [0]
 def random_walk(i):
