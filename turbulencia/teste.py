@@ -14,19 +14,18 @@ v1 = pd.DataFrame(dados,columns=[5])
 w1 = pd.DataFrame(dados,columns=[6])
 tv = pd.DataFrame(dados,columns=[7])
 
-y=scipy.fftpack.fft(tv)
+y=np.fft(u1)
 # Number of sample points
-
-s = abs(y)
-N = s.shape[0] #number of elements
+s1 = np.multiply(y,y)
+s = abs(s1)
+N = len(s) #number of elements
 n = int(float(N)/2)
-pyy1= s[0:n]
-pyy = np.multiply(pyy1,pyy1)
+pyy= s[0:n]
 ny = 20/2
 fy1 = np.array(range(0,n))
 fy = fy1/n*ny
 log = plt.loglog(fy,pyy,'r.')
 plt.xlabel('Frequência (Hz)')
 plt.ylabel('Densidade Espectral')
-plt.title('Temperatura')
+plt.title('u1')
 plt.show()

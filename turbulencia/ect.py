@@ -53,21 +53,26 @@ media20u2 = np.multiply(mediau20,mediau20)
 media20v2 = np.multiply(mediav20,mediav20)
 media20w2 = np.multiply(mediaw20,mediaw20)
 media20uv = sum(media20u2,media20v2)
-ect201 = sum(media20uv,media20w2)
+ect200 = sum(media20uv,media20w2)
+ect201 = np.sqrt(ect200)
 
 #Calcular a energia para 40 min
 media40u2= np.multiply(mediau40,mediau40)
 media40v2= np.multiply(mediav40,mediav40)
 media40w2= np.multiply(mediaw40,mediaw40)
 media40uv = sum(media40u2,media40v2)
-ect401 = sum(media40uv,media40w2)
+ect400 = sum(media40uv,media40w2)
+ect401 = np.sqrt(ect400)
+
 
 #Calcular a energia para 20 min
 media60u2= np.multiply(mediau60,mediau60)
 media60v2= np.multiply(mediav60,mediav60)
 media60w2= np.multiply(mediaw60,mediaw60)
 media60uv = sum(media60u2,media60v2)
-ect601 = sum(media60uv,media60w2)
+ect600 = sum(media60uv,media60w2)
+ect601 = np.sqrt(ect600)
+
 
 #Calcular o numero 
 richard = np.mean(ect201)
