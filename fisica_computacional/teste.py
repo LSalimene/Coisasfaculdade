@@ -1,32 +1,27 @@
-## P. R. del Santoro para  Fis. Comp. IMEF/FURG 02/20
-import random as rd                 # Importa biblioteca random
-import matplotlib.pyplot as plt     # Importa biblioteca matplotlib.pyplot
+import numpy as np #importar o pacote numpy
+from matplotlib import pyplot as plt #importar a função pyplot do pacote matplotlib
 
-N=1000
- 
+#condições iniciais para o metodo de Euler
+x0 = 0 #criar um intervalo entre 0 e 10 para a constante de decaimento
+n0 = 1 #valor inicial de atomos no instante t
+xf = 10 #criar um intervalo entre 0 e 10 para a constante de decaimento
+p = 1000 #numero de pontos
+deltax = (xf-x0)/(p-1)
 
+x = np.linspace (x0,xf,p) #criar o vetor x para depois gerar os valores de y
 
-dist=[]   # Cria uma "lista vazia"
-dist2=[]
-d,e=0.0,0.0     # Posicao Inicial
+n = np.zeros ([p]) #armazenar os valores de n
+n[0] = n0
 
+#loop para a solução pelo metodo de Euler
+for i in range (1,p):
+   n[i] = deltax*(-n[i-1] *x[i-1]) + n[i-1]
 
-for n in range(N):  
-   x=rd.random() # Sorteia numero entre 0.0 e 1.0
-   if x > 0.5:   # Verifica se x maior ou menor que 0.5
-      passo =1.0 # Se x > 0.5 o passo  a direita
-   else :
-      passo =-1.0 # Se x < 0.5 o passo a esquerda
-   
-   y=rd.random()
-   if y > 0.5:
-      passo2=1.0
-   else:
-      passo2=-1.0
-   d=d+passo  # distancia no "'n-esimo " passo
-   e=e+passo2
-   dist.append(d) # adiciona d a lista
-   dist2.append(e)
+for i in range (p):
+   print(x[i],n[i])
 
-plt.plot(dist,dist2) # desennha lista posicao na vertical mumero do passoa na horizontal
+plt.plot(x,n,'g.')
+plt.xlabel('Valor de beta')
+plt.ylabel('Numero de atomos no tempo t')
+plt.title ( ' Solução aproximada pela metodo de Euler ' )
 plt.show()
