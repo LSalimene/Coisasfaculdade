@@ -17,9 +17,8 @@ n[0] = n0
 for i in range (1,p):
    n[i] = deltax*(-n[i-1] *x[i-1]) + n[i-1]
 
-
 plt.plot(x,n,'g.')
 plt.xlabel('Tempo em minutos')
 plt.ylabel('Numero de atomos')
-plt.title ( ' Solução aproximada pelo metodo de Euler ' )
+plt.title ('Solução aproximada pelo metodo de Euler')
 plt.show()
