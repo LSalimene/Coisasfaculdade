@@ -5,10 +5,9 @@ from mpl_toolkits.basemap import Basemap
 import numpy as np
 import h5py
 
-f = h5py.File('o3/2020/OMI-Aura_L3-OMDOAO3e_2020m0301_v003-2020m0303t025646.he5', 'r')
+f= h5py.File('o3/2020/OMI-Aura_L3-OMDOAO3e_2020m0301_v003-2020m0303t025646.he5', 'r')
 dset = f['HDFEOS/GRIDS/ColumnAmountO3/Data Fields/ColumnAmountO3']
 data = dset[:]
-
 # Handle fill value.
 data[data == dset.fillvalue] = np.nan
 data = np.ma.masked_where(np.isnan(data), data)
@@ -19,7 +18,7 @@ data = np.ma.masked_where(np.isnan(data), data)
 title = dset.attrs['Title'].decode()
 units = dset.attrs['Units'].decode()
 
-m = Basemap(projection='cyl', resolution='l', llcrnrlat=-32.5, urcrnrlat = -30, llcrnrlon=-53, urcrnrlon = -51)
+m = Basemap(projection='cyl', resolution='l',  llcrnrlat=-90, urcrnrlat = 90, llcrnrlon=-180, urcrnrlon = 180)
 m.drawcoastlines(linewidth=0.5)
 m.drawparallels(np.arange(-90., 120., 30.), labels=[1, 0, 0, 0])
 m.drawmeridians(np.arange(-180., 181., 45.), labels=[0, 0, 0, 1])
