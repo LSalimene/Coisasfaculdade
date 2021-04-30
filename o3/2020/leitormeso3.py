@@ -45,7 +45,7 @@ for i in arquivos:
         dset = file
         dados.append(file[:])
 
-data=dados[0]
+data=dados[29]
 print(data)
 # Handle fill value.
 data[data == dset.fillvalue] = np.nan
@@ -60,5 +60,5 @@ longitude = np.arange(0., 1440.0) * 0.25 - 180 + 0.125
 latitude = np.arange(0., 720.0) * 0.25 - 90 + 0.125
 m.pcolormesh(longitude, latitude, data, latlon=True, cmap='tab20b',shading='auto')
 cb = m.colorbar(label='Solução Total de Ozonio')
-plt.title('OMI-AURA dia 01/03/2020')
+plt.title('OMI-AURA dia 30/03/2020')
 plt.show()
