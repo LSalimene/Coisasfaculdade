@@ -165,9 +165,9 @@ if __name__ == '__main__':
     
     # verify daily:
     verify = DailyVerify(gmi)    
-    if verify.success: print 'successful verification for daily'
+    if verify.success: print ('successful verification for daily')
     else: sys.exit('verification failed for daily')
     print
 
-    print 'all tests completed successfully'
+    print ('all tests completed successfully')
     
