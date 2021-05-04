@@ -8,19 +8,23 @@ from netCDF4 import Dataset as nc
 
 ncdia = nc('oceansat/AQUA_MODIS.20161001.L3m.DAY.NSST.sst.4km.nc','r')
 ncnoite = nc('oceansat/AQUA_MODIS.20161001.L3m.DAY.NSST.sst.4km.nc','r')
-data = gmi.GMIdaily('oceansat/f35_20161001v8.2')
+data = gmi.GMIdaily('oceansat/f35_20161001v8.2.gz')
 sstdia = ncdia.variables['sst'][:]
 nsst = ncnoite.variables['sst'][:]
 lon = ncdia.variables['lon'][:]
 lat = ncdia.variables['lat'][:]
-
+sstmw = data.variables['sst'][:]
+lon1 = data.variables['longitude'][:]
+lat1 = data.variables['latitude'][:]
+sstmw[sstmw>250] = np.nan
+sstmw = np.nanmean(sstmw,2)
 sstir = np.concatenate((sstdia,nsst),axis=1)
 sstir=np.nanmean(sstir,1)
 sstir[sstir>=45]=np.nan
 sstir[sstir<=-2]=np.nan
 sstir = np.flipud(sstir)
 ax = plt.axes(projection=cartopy.crs.PlateCarree())
-plt.contourf(lon, lat, sstdia, cmap='tab20b',shading='auto')
+plt.contourf(lon1, lat1, sstmw, cmap='tab20b')
 ax.add_feature(cartopy.feature.COASTLINE)
 plt.colorbar(label='TSM')
 

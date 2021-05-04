@@ -2,7 +2,6 @@ from bytemaps import sys
 from bytemaps import Dataset
 from bytemaps import Verify
 
-
 class GMIdaily(Dataset):
     """ Read daily GMI bytemaps. """
     """

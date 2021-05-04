@@ -4,6 +4,7 @@ import copy
 import decimal
 import gzip
 import numpy as np
+from functools import reduce
 import sys
 from collections import namedtuple
 from collections import OrderedDict
