@@ -12,7 +12,7 @@ err = data.variables['err'][0,:,:]
 lon = data.variables['longitude'][:]
 lat = data.variables['latitude'][:]
 ax = plt.axes(projection=cartopy.crs.PlateCarree())
-plt.contourf(lon, lat, sla, cmap='plasma')
+plt.pcolormesh(lon, lat, err, cmap='plasma')
 ax.add_feature(cartopy.feature.COASTLINE)
 plt.colorbar(label='m')
 plt.title ('Anomalia de altura do mar')
